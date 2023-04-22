@@ -31,9 +31,9 @@ public:
 		CH3	= 0x08,
 	};
 
-	/** Create a PCA8561 instance with specified address
+	/** Create a PCA9846 instance with specified address
 	 *
-	 * @param i2c_address I2C-bus address (default: (0x70>>1))
+	 * @param i2c_address I2C-bus address (default: (0xE2>>1))
 	 */
 	PCA9846( uint8_t i2c_address = (0xE2 >> 1) );
 	virtual ~PCA9846();
@@ -48,13 +48,13 @@ public:
 	 *
 	 * @param flags bitmap flags for enabling channels
 	 */
-	void select( channel flags );	
+	void select( uint8_t flags );	
 
 	/** Channel select
 	 *
 	 * @return flags bitmap flags for enabling channels
 	 */
-	channel select( void );	
+	uint8_t select( void );	
 };
 
 #endif //	ARDUINO_MUX_SW_H

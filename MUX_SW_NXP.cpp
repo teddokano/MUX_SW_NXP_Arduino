@@ -14,12 +14,12 @@ void PCA9846::begin( void )
 {
 }
 
-void PCA9846::select( channel flags )
+void PCA9846::select( uint8_t flags )
 {
-	tx( (uint8_t *)(&flags), 1 );
+	tx( &flags, 1 );
 }
 
-channel PCA9846::select( void )
+uint8_t PCA9846::select( void )
 {
 	uint8_t	flags;
 	
