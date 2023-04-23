@@ -30,7 +30,7 @@ void setup() {
 
   Wire.begin();
 
-  char test_str[] = "A string read from EEPROM[*] - Hello, PCA9846 Arduino shield evaluation board test program";
+  char test_str[] = "EEPROM[*] is responding - Hello, PCA9846 Arduino shield evaluation board test program";
 
   Serial.print("test string: ");
   Serial.println(test_str);
@@ -40,13 +40,13 @@ void setup() {
   sw.select(PCA9846::CH0 | PCA9846::CH1 | PCA9846::CH2 | PCA9846::CH3);
 
   for (int i = 0; i < sw.N_CH; i++) {
-    test_str[26] = i + '0';
+    test_str[7] = i + '0';
     eeprom[i].write(0, (uint8_t*)test_str, sizeof(test_str));
   }
 }
 
 void loop() {
-    char str[] = "\n*** PCA9846 setting: only channel * is ON ***";
+  char str[] = "\n*** PCA9846 setting: only channel * is ON ***";
 
   Serial.println("\n*** PCA9846 setting: All channels ON ***");
   sw.select(PCA9846::CH0 | PCA9846::CH1 | PCA9846::CH2 | PCA9846::CH3);
@@ -60,7 +60,7 @@ void loop() {
     sw.select(0x1 << i);
     try_eeprom_read();
 
-  delay(1000);
+    delay(1000);
   }
 }
 
@@ -71,10 +71,8 @@ void try_eeprom_read(void) {
   for (int i = 0; i < sw.N_CH; i++) {
     if (eeprom[i].ping()) {
       eeprom[i].read(0, (uint8_t*)read_str, READ_BUFFER_SIZE);
-
-      Serial.print("read string: ");
+      
       Serial.println(read_str);
-
     } else {
       str[7] = i + '0';
       Serial.println(str);
