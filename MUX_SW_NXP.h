@@ -30,7 +30,10 @@ public:
 		CH2	= 0x04,
 		CH3	= 0x08,
 	};
-
+	
+	/** Number of channels */
+	constexpr static int	N_CH	= 4;
+	
 	/** Create a PCA9846 instance with specified address
 	 *
 	 * @param i2c_address I2C-bus address (default: (0xE2>>1))

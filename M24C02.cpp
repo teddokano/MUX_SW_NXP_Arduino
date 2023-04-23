@@ -14,31 +14,28 @@ void M24C02::begin( void )
 
 int M24C02::write( int byte_adr, uint8_t data )
 {
-	int count	= 10;
-
-	while ( !ping() && count-- )
-		delay( 1 );
+	if ( !wait_write_complete( 10 ) )
+		return -10;
 	
-	if ( !count ) {
-		Serial.println("time out in M24C02::write()");
-		return -10;		
-	}
+	int r = reg_w( byte_adr, data );
 	
-	return reg_w( byte_adr, data );
+	if ( !wait_write_complete( 10 ) )
+		return -10;
+	
+	return r;
 }
 
 int M24C02::write( int byte_adr, uint8_t *dp, int length )
 {
 #define	PAGE_WRITE_SIZE	16
-	int count	= 10;
 	int	w_size;
 	int	written	= 0;
 	
 	while ( length ) {
 		w_size	= ( PAGE_WRITE_SIZE < length ) ? PAGE_WRITE_SIZE : length;
 
-		while ( !ping() && count-- )
-			delay( 1 );
+		if ( !wait_write_complete( 10 ) )
+			return -10;
 		
 		w_size	= reg_w( byte_adr, dp, w_size ) - 1;
 
@@ -50,13 +47,22 @@ int M24C02::write( int byte_adr, uint8_t *dp, int length )
 		byte_adr	+= w_size;
 		dp			+= w_size;
 	}
-	
-	if ( !count ) {
-		Serial.println("time out in M24C02::write()");
-		return -10;		
-	}
+
+	if ( !wait_write_complete( 10 ) )
+		return -10;
 	
 	return written;
+}
+
+int M24C02::wait_write_complete( int n )
+{
+	while ( !ping() && n-- )
+		delay( 1 );
+	
+	if ( !n )
+		Serial.println("time out in M24C02::wait_write_complete()");
+
+	return n;
 }
 
 uint8_t M24C02::read( int byte_adr )

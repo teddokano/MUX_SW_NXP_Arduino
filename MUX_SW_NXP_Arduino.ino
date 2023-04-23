@@ -17,8 +17,12 @@
 #define READ_BUFFER_SIZE 128
 
 PCA9846 sw;
-M24C02 eeprom;
-M24C02 eeprom2( 0xA2 >> 1 );
+M24C02 eeprom[] = {
+  M24C02(0xA0 >> 1),
+  M24C02(0xA2 >> 1),
+  M24C02(0xA4 >> 1),
+  M24C02(0xA6 >> 1),
+};
 
 void setup() {
   Serial.begin(9600);
@@ -26,46 +30,35 @@ void setup() {
 
   Wire.begin();
 
-
-
-  char test_str[] = "Hello, PCA9846 Arduino shield evaluation board test program";
-  char read_str[ READ_BUFFER_SIZE ];
-
-  Serial.print("read string: ");
-  Serial.println(read_str);
-  Serial.print("read string length: ");
-  Serial.println(sizeof(read_str));
+  char test_str[] = "EEPROM[*] : Hello, PCA9846 Arduino shield evaluation board test program     ";
+  char read_str[READ_BUFFER_SIZE];
 
   Serial.print("test string: ");
   Serial.println(test_str);
   Serial.print("test string length: ");
   Serial.println(sizeof(test_str));
 
- sw.select(PCA9846::CH0 | PCA9846::CH1 | PCA9846::CH2 | PCA9846::CH3);
-sw.select(PCA9846::CH0);
+  sw.select(PCA9846::CH0 | PCA9846::CH1 | PCA9846::CH2 | PCA9846::CH3);
 
-  delay(100);
-    Serial.println(eeprom.ping());
-  Serial.println(eeprom2.ping());
+  for (int i = 0; i < sw.N_CH; i++) {
+    test_str[7] = i + '0';
+    eeprom[i].write(0, (uint8_t*)test_str, sizeof(test_str));
+  }
 
-  eeprom.write(0, (uint8_t*)test_str, sizeof(test_str));
-  delay(100);
-  eeprom.read(0, (uint8_t*)read_str, READ_BUFFER_SIZE);
+  for (int i = 0; i < sw.N_CH; i++) {
+    eeprom[i].read(0, (uint8_t*)read_str, READ_BUFFER_SIZE);
 
-  Serial.print("read string: ");
-  Serial.println(read_str);
-  Serial.print("read string length: ");
-  Serial.println(sizeof(read_str));
-
-//  sw.select(0);
+    Serial.print("read string: ");
+    Serial.println(read_str);
+  }
 }
 
 void loop() {
   static int count = 0;
 
-  eeprom.write(0, count++);
+  eeprom[0].write(0, count++);
   delay(10);
 
-  Serial.println(eeprom.read(0), HEX);
+  Serial.println(eeprom[0].read(0), HEX);
   delay(1000);
 }

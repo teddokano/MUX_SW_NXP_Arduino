@@ -37,6 +37,13 @@ public:
 	 */
 	void begin( void );
 
+	/** Wait write complete 
+	 *
+	 *	@param n loop count (in mili-second)
+	 *	@return remain count: 0 means timeout
+	 */
+	int wait_write_complete( int n );
+
 	/** Write data
 	 *
 	 * @param byte_adr byte address
@@ -45,7 +52,7 @@ public:
 	int write( int byte_adr, uint8_t data );	
 	int write( int byte_adr, uint8_t *dp, int length );	
 
-	/** Write data
+	/** Read data
 	 *
 	 * @param byte_adr byte address
 	 * @return 1 byte read data
