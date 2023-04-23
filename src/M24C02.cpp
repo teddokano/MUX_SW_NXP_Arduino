@@ -1,4 +1,4 @@
-#include "M24C02.h"
+#include <M24C02.h>
 
 M24C02::M24C02( uint8_t i2c_address ) : I2C_device( i2c_address )
 {
