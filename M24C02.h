@@ -43,6 +43,7 @@ public:
 	 * @param data 1 byte data for writing
 	 */
 	int write( int byte_adr, uint8_t data );	
+	int write( int byte_adr, uint8_t *dp, int length );	
 
 	/** Write data
 	 *
@@ -50,7 +51,7 @@ public:
 	 * @return 1 byte read data
 	 */
 	uint8_t read( int byte_adr );	
-
+	int read( int byte_adr, uint8_t *dp, int length );	
 };
 
 #endif //	ARDUINO_M24C02_H
