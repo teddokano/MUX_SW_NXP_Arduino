@@ -29,6 +29,13 @@ public:
 	 * @param i2c_address I2C-bus address (default: (0xA0>>1))
 	 */
 	M24C02( uint8_t i2c_address = (0xA0 >> 1) );
+
+	/** Create a M24C02 instance with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0xA0>>1))
+	 */
+	M24C02( TwoWire& wire, uint8_t i2c_address = (0xA0 >> 1) );
 	virtual ~M24C02();
 	
 	/** Begin the device operation

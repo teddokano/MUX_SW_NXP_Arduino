@@ -39,6 +39,13 @@ public:
 	 * @param i2c_address I2C-bus address (default: (0xE2>>1))
 	 */
 	PCA9846( uint8_t i2c_address = (0xE2 >> 1) );
+
+	/** Create a PCA9846 instance with specified address
+	 *
+	 * @param wire TwoWire instance
+	 * @param i2c_address I2C-bus address (default: (0xE2>>1))
+	 */
+	PCA9846( TwoWire& wire, uint8_t i2c_address = (0xE2 >> 1) );
 	virtual ~PCA9846();
 	
 	/** Begin the device operation

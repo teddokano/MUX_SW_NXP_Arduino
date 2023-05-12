@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -99,21 +99,23 @@ $(function() {
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_p_c_a9846.html#a11fd940c22270e5f910501ec1b2d0937">   35</a></span>    <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">int</span>    <a class="code hl_variable" href="class_p_c_a9846.html#a11fd940c22270e5f910501ec1b2d0937">N_CH</a>    = 4;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="class_p_c_a9846.html">PCA9846</a>( uint8_t i2c_address = (0xE2 &gt;&gt; 1) );</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_p_c_a9846.html#a6aecb05cf8c8de48023723bd625d3a52">~PCA9846</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9846.html#a35875138e9180392ed6a6cd51e727a48">begin</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9846.html#a09c6c36b9a60314a9870d1014fe96d6b">select</a>( uint8_t flags );   </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    uint8_t <a class="code hl_function" href="class_p_c_a9846.html#a09c6c36b9a60314a9870d1014fe96d6b">select</a>( <span class="keywordtype">void</span> ); </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_class" href="class_p_c_a9846.html">PCA9846</a>( TwoWire&amp; wire, uint8_t i2c_address = (0xE2 &gt;&gt; 1) );</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_p_c_a9846.html#a6aecb05cf8c8de48023723bd625d3a52">~PCA9846</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9846.html#a35875138e9180392ed6a6cd51e727a48">begin</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_p_c_a9846.html#a09c6c36b9a60314a9870d1014fe96d6b">select</a>( uint8_t flags );   </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">//   ARDUINO_MUX_SW_H</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    uint8_t <a class="code hl_function" href="class_p_c_a9846.html#a09c6c36b9a60314a9870d1014fe96d6b">select</a>( <span class="keywordtype">void</span> ); </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">//   ARDUINO_MUX_SW_H</span></div>
 <div class="ttc" id="aclass_p_c_a9846_html"><div class="ttname"><a href="class_p_c_a9846.html">PCA9846</a></div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00024">MUX_SW_NXP.h:25</a></div></div>
-<div class="ttc" id="aclass_p_c_a9846_html_a09c6c36b9a60314a9870d1014fe96d6b"><div class="ttname"><a href="class_p_c_a9846.html#a09c6c36b9a60314a9870d1014fe96d6b">PCA9846::select</a></div><div class="ttdeci">uint8_t select(void)</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00022">MUX_SW_NXP.cpp:22</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a09c6c36b9a60314a9870d1014fe96d6b"><div class="ttname"><a href="class_p_c_a9846.html#a09c6c36b9a60314a9870d1014fe96d6b">PCA9846::select</a></div><div class="ttdeci">uint8_t select(void)</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00026">MUX_SW_NXP.cpp:26</a></div></div>
 <div class="ttc" id="aclass_p_c_a9846_html_a11fd940c22270e5f910501ec1b2d0937"><div class="ttname"><a href="class_p_c_a9846.html#a11fd940c22270e5f910501ec1b2d0937">PCA9846::N_CH</a></div><div class="ttdeci">static constexpr int N_CH</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00035">MUX_SW_NXP.h:35</a></div></div>
-<div class="ttc" id="aclass_p_c_a9846_html_a35875138e9180392ed6a6cd51e727a48"><div class="ttname"><a href="class_p_c_a9846.html#a35875138e9180392ed6a6cd51e727a48">PCA9846::begin</a></div><div class="ttdeci">void begin(void)</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00013">MUX_SW_NXP.cpp:13</a></div></div>
-<div class="ttc" id="aclass_p_c_a9846_html_a6aecb05cf8c8de48023723bd625d3a52"><div class="ttname"><a href="class_p_c_a9846.html#a6aecb05cf8c8de48023723bd625d3a52">PCA9846::~PCA9846</a></div><div class="ttdeci">virtual ~PCA9846()</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00009">MUX_SW_NXP.cpp:9</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a35875138e9180392ed6a6cd51e727a48"><div class="ttname"><a href="class_p_c_a9846.html#a35875138e9180392ed6a6cd51e727a48">PCA9846::begin</a></div><div class="ttdeci">void begin(void)</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00017">MUX_SW_NXP.cpp:17</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a6aecb05cf8c8de48023723bd625d3a52"><div class="ttname"><a href="class_p_c_a9846.html#a6aecb05cf8c8de48023723bd625d3a52">PCA9846::~PCA9846</a></div><div class="ttdeci">virtual ~PCA9846()</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00013">MUX_SW_NXP.cpp:13</a></div></div>
 <div class="ttc" id="aclass_p_c_a9846_html_a82043e9c8d55fd4269d357a6c8b7afd7"><div class="ttname"><a href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7">PCA9846::channel</a></div><div class="ttdeci">channel</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00027">MUX_SW_NXP.h:27</a></div></div>
 <div class="ttc" id="aclass_p_c_a9846_html_a82043e9c8d55fd4269d357a6c8b7afd7a4b188c1ed15c4d0891f8b008976511ac"><div class="ttname"><a href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a4b188c1ed15c4d0891f8b008976511ac">PCA9846::CH2</a></div><div class="ttdeci">@ CH2</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00030">MUX_SW_NXP.h:30</a></div></div>
 <div class="ttc" id="aclass_p_c_a9846_html_a82043e9c8d55fd4269d357a6c8b7afd7a91e357aca43639058e736fa2db423890"><div class="ttname"><a href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a91e357aca43639058e736fa2db423890">PCA9846::CH1</a></div><div class="ttdeci">@ CH1</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00029">MUX_SW_NXP.h:29</a></div></div>

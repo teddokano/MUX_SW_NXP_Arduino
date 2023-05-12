@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -89,6 +89,8 @@ Inheritance diagram for M24C02:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad755064df828fd131cf88471ddd7b764"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m24_c02.html#ad755064df828fd131cf88471ddd7b764">M24C02</a> (uint8_t i2c_address=(0xA0 &gt; &gt; 1))</td></tr>
 <tr class="separator:ad755064df828fd131cf88471ddd7b764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b9a22fc736f94af332af5b037741f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m24_c02.html#af0b9a22fc736f94af332af5b037741f5">M24C02</a> (TwoWire &amp;wire, uint8_t i2c_address=(0xA0 &gt; &gt; 1))</td></tr>
+<tr class="separator:af0b9a22fc736f94af332af5b037741f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4948a02871065dcc0560e70a9d8056c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m24_c02.html#ad4948a02871065dcc0560e70a9d8056c">~M24C02</a> ()</td></tr>
 <tr class="separator:ad4948a02871065dcc0560e70a9d8056c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aee3fa997665ab7386490e5ae70dae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m24_c02.html#a9aee3fa997665ab7386490e5ae70dae0">begin</a> (void)</td></tr>
@@ -113,7 +115,7 @@ Public Member Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_m24_c02_8h_source.html#l00024">24</a> of file <a class="el" href="_m24_c02_8h_source.html">M24C02.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad755064df828fd131cf88471ddd7b764" name="ad755064df828fd131cf88471ddd7b764"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad755064df828fd131cf88471ddd7b764">&#9670;&#160;</a></span>M24C02()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad755064df828fd131cf88471ddd7b764">&#9670;&#160;</a></span>M24C02() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,6 +138,44 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00003">3</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af0b9a22fc736f94af332af5b037741f5" name="af0b9a22fc736f94af332af5b037741f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b9a22fc736f94af332af5b037741f5">&#9670;&#160;</a></span>M24C02() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">M24C02::M24C02 </td>
+          <td>(</td>
+          <td class="paramtype">TwoWire &amp;&#160;</td>
+          <td class="paramname"><em>wire</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>i2c_address</em> = <code>(0xA0&#160;&gt;&gt;&#160;1)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a <a class="el" href="class_m24_c02.html">M24C02</a> instance with specified address</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wire</td><td>TwoWire instance </td></tr>
+    <tr><td class="paramname">i2c_address</td><td>I2C-bus address (default: (0xA0&gt;&gt;1)) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00007">7</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
 </div>
 </div>
@@ -162,7 +202,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00007">7</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00011">11</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
 </div>
 </div>
@@ -185,7 +225,7 @@ Public Member Functions</h2></td></tr>
 <p>Begin the device operation</p>
 <p>This method turns-on the device </p>
 
-<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00011">11</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00015">15</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
 </div>
 </div>
@@ -213,7 +253,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 byte read data </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00068">68</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00072">72</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
 </div>
 </div>
@@ -249,7 +289,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00073">73</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00077">77</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
 </div>
 </div>
@@ -277,9 +317,9 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>remain count: 0 means timeout </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00057">57</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00061">61</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_m24_c02_8cpp_source.html#l00015">write()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_m24_c02_8cpp_source.html#l00019">write()</a>.</p>
 
 </div>
 </div>
@@ -315,7 +355,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00028">28</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00032">32</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +393,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00015">15</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m24_c02_8cpp_source.html#l00019">19</a> of file <a class="el" href="_m24_c02_8cpp_source.html">M24C02.cpp</a>.</p>
 
 </div>
 </div>

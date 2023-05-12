@@ -4,6 +4,10 @@ M24C02::M24C02( uint8_t i2c_address ) : I2C_device( i2c_address )
 {
 }
 
+M24C02::M24C02( TwoWire& wire, uint8_t i2c_address ) : I2C_device( wire, i2c_address )
+{
+}
+
 M24C02::~M24C02()
 {
 }

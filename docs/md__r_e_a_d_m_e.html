@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -73,7 +73,92 @@ $(function() {
   <div class="headertitle"><div class="title">MUX_SW_NXP_Arduino </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><p>I2C multiplexer/switch device operation sample code for <a href="https://www.arduino.cc">Arduino</a></p>
+<blockquote class="doxtable">
+<p>&zwj;<b>Note</b> </p>
+</blockquote>
+<p>This library works with <a href="https://github.com/teddokano/I2C_device_Arduino"><code>I2C_device</code></a> library together. Please be sure the <code>I2C_device</code> library is imported in your environment before trying to build.</p>
+<p><img src="https://github.com/teddokano/additional_files/blob/main/MUX_SW_NXP_Arduino/board.jpg" alt="Boards" class="inline"/> <br  />
+ <em>PCA9846PW-ARD : Arduino® Shield Evaluation Board for I²C switch</em></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+What is this?</h1>
+<p>An Arduino library for I²C multiplexer/switch with sample code. <br  />
+ This library provides simple API to switch I²C bus. <br  />
+ Include device name header file (<code><a class="el" href="_p_c_a9846_8h.html">PCA9846.h</a></code>) to use those class libraries.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="_p_c_a9846_8h.html">PCA9846.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_class" href="class_p_c_a9846.html">PCA9846</a> sw;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> setup() {</div>
+<div class="line">  Wire.<a class="code hl_function" href="class_p_c_a9846.html#a35875138e9180392ed6a6cd51e727a48">begin</a>();</div>
+<div class="line"> </div>
+<div class="line">  sw.<a class="code hl_function" href="class_p_c_a9846.html#a11b7dd6e2da899eef5110e7033b5ff19">select</a>(<a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7ae66a592edfc49143e800789af7476e64">PCA9846::CH0</a> | <a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a91e357aca43639058e736fa2db423890">PCA9846::CH1</a> | <a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a4b188c1ed15c4d0891f8b008976511ac">PCA9846::CH2</a> | <a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a988929db1fd55295077a3ad79581c563">PCA9846::CH3</a>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> loop() {</div>
+<div class="line">  ...</div>
+<div class="line">  sw.<a class="code hl_function" href="class_p_c_a9846.html#a11b7dd6e2da899eef5110e7033b5ff19">select</a>(<a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7ae66a592edfc49143e800789af7476e64">PCA9846::CH0</a> | <a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a91e357aca43639058e736fa2db423890">PCA9846::CH1</a> | <a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a4b188c1ed15c4d0891f8b008976511ac">PCA9846::CH2</a> | <a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a988929db1fd55295077a3ad79581c563">PCA9846::CH3</a>); <span class="comment">//  Select all channels</span></div>
+<div class="line">  ...</div>
+<div class="line">  sw.<a class="code hl_function" href="class_p_c_a9846.html#a11b7dd6e2da899eef5110e7033b5ff19">select</a>(<a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7ae66a592edfc49143e800789af7476e64">PCA9846::CH0</a>);  <span class="comment">//  Select channel-0 only</span></div>
+<div class="line">  ...</div>
+<div class="line">  sw.<a class="code hl_function" href="class_p_c_a9846.html#a11b7dd6e2da899eef5110e7033b5ff19">select</a>(<a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a4b188c1ed15c4d0891f8b008976511ac">PCA9846::CH2</a> | <a class="code hl_enumvalue" href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a988929db1fd55295077a3ad79581c563">PCA9846::CH3</a>);   <span class="comment">//  Select channel-2 and 3</span></div>
+<div class="line">}</div>
+<div class="ttc" id="a_p_c_a9846_8h_html"><div class="ttname"><a href="_p_c_a9846_8h.html">PCA9846.h</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html"><div class="ttname"><a href="class_p_c_a9846.html">PCA9846</a></div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00024">MUX_SW_NXP.h:25</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a11b7dd6e2da899eef5110e7033b5ff19"><div class="ttname"><a href="class_p_c_a9846.html#a11b7dd6e2da899eef5110e7033b5ff19">PCA9846::select</a></div><div class="ttdeci">void select(uint8_t flags)</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00021">MUX_SW_NXP.cpp:21</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a35875138e9180392ed6a6cd51e727a48"><div class="ttname"><a href="class_p_c_a9846.html#a35875138e9180392ed6a6cd51e727a48">PCA9846::begin</a></div><div class="ttdeci">void begin(void)</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00017">MUX_SW_NXP.cpp:17</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a82043e9c8d55fd4269d357a6c8b7afd7a4b188c1ed15c4d0891f8b008976511ac"><div class="ttname"><a href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a4b188c1ed15c4d0891f8b008976511ac">PCA9846::CH2</a></div><div class="ttdeci">@ CH2</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00030">MUX_SW_NXP.h:30</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a82043e9c8d55fd4269d357a6c8b7afd7a91e357aca43639058e736fa2db423890"><div class="ttname"><a href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a91e357aca43639058e736fa2db423890">PCA9846::CH1</a></div><div class="ttdeci">@ CH1</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00029">MUX_SW_NXP.h:29</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a82043e9c8d55fd4269d357a6c8b7afd7a988929db1fd55295077a3ad79581c563"><div class="ttname"><a href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7a988929db1fd55295077a3ad79581c563">PCA9846::CH3</a></div><div class="ttdeci">@ CH3</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00031">MUX_SW_NXP.h:31</a></div></div>
+<div class="ttc" id="aclass_p_c_a9846_html_a82043e9c8d55fd4269d357a6c8b7afd7ae66a592edfc49143e800789af7476e64"><div class="ttname"><a href="class_p_c_a9846.html#a82043e9c8d55fd4269d357a6c8b7afd7ae66a592edfc49143e800789af7476e64">PCA9846::CH0</a></div><div class="ttdeci">@ CH0</div><div class="ttdef"><b>Definition:</b> <a href="_m_u_x___s_w___n_x_p_8h_source.html#l00028">MUX_SW_NXP.h:28</a></div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+Supported device</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Type#   </th><th class="markdownTableHeadNone">Header file   </th><th class="markdownTableHeadNone">Features   </th><th class="markdownTableHeadNone">Interface   </th><th class="markdownTableHeadNone">Evaluation board    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://www.nxp.com/products/interfaces/ic-spi-i3c-interface-devices/ic-multiplexers-switches/four-channel-ultra-low-voltage-fm-plus-ic-bus-switch-with-reset:PCA9846">PCA9846</a>   </td><td class="markdownTableBodyNone"><code><a class="el" href="_p_c_a9846_8h.html">PCA9846.h</a></code>   </td><td class="markdownTableBodyNone">Four-Channel Ultra-Low Voltage, Fm+ I²C-Bus Switch with Reset   </td><td class="markdownTableBodyNone">I²C Fast-mode Plus (1MHz)   </td><td class="markdownTableBodyNone"><a href="https://www.nxp.com/design/development-boards/analog-toolbox/arduino-shields-solutions/pca9846pw-ard-arduino-shield:PCA9846PW-ARD">PCA9846PW-ARD Arduino® Shield</a>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Getting started</h1>
+<p>Use Library manager in Arduino IDE for easy install</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+What's inside?</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Examples</h2>
+<p>Examples are provided as scketch files.</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+How to use?</h3>
+<p>After library install, Choose menu on Arduino-IDE: <code>File</code>→<code>Examples</code>→<code>MUX_SW_NXP_Arduino</code>→ PCA9846_demo_w_M24C02</p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Sample code</h3>
+<p>This repo is including only one sample code: PCA9846_demo_w_M24C02. It will demonstrate the PCA9846PW-ARD Arduino® Shield with devices on the board. <br  />
+</p>
+<p>The PCA9846PW-ARD Arduino® Shield has a <a class="el" href="class_p_c_a9846.html">PCA9846</a>: I²C bus switch with 4x <a class="el" href="class_m24_c02.html">M24C02</a>: EEPROMs. The sample program writes data into all those EEPROM in <code>setup()</code> function. In <code>loop()</code> function, it repeats to access those EEPROM with changing the <a class="el" href="class_p_c_a9846.html">PCA9846</a> channel setting.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Document</h1>
+<p>For details of the library, please find descriptions in <a href="https://teddokano.github.io/MUX_SW_NXP_Arduino/annotated.html">this document</a>.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Related libraries</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Library   </th><th class="markdownTableHeadNone">Feature   </th><th class="markdownTableHeadNone">Target devices   </th><th class="markdownTableHeadNone">Required library    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/GPIO_NXP_Arduino">GPIO_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">GPIO libraries   </td><td class="markdownTableBodyNone">PCAL6408A, PCAL6416A, PCAL6524, PCAL6534, PCA9555, PCA9554   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LCDDriver_NXP_Arduino">LCDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">LCD driver libraries   </td><td class="markdownTableBodyNone">PCA8561   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/LEDDriver_NXP_Arduino">LEDDriver_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">LED driver libraries   </td><td class="markdownTableBodyNone">PCA9955B, PCA9956B, PCA9957   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/MUX_SW_NXP_Arduino">MUX_SW_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">I²C mux/switch libraries   </td><td class="markdownTableBodyNone"><a class="el" href="class_p_c_a9846.html">PCA9846</a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/RTC_NXP_Arduino">RTC_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">RTC libraries   </td><td class="markdownTableBodyNone">PCF2131, PCF85063A   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/TempSensor_NXP_Arduino">TempSensor_NXP_Arduino</a>   </td><td class="markdownTableBodyNone">Temperature sensor libraries   </td><td class="markdownTableBodyNone">LM75B, PCT2075, P3T1085   </td><td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/teddokano/I2C_device_Arduino">I2C_device_Arduino</a>   </td><td class="markdownTableBodyNone">Base library for I²C operations   </td><td class="markdownTableBodyNone">none (can be applied as base class for all I²C targets)   </td><td class="markdownTableBodyNone">&mdash;   </td></tr>
+</table>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

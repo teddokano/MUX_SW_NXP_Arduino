@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">LCDDriver_NXP_Arduino<span id="projectnumber">&#160;0.3.0</span>
    </div>
    <div id="projectbrief">Temperature sensor device operation sample code for Arduino</div>
   </td>
@@ -100,6 +100,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b7728a28e7d633581602c96b270eccb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9846.html#a5b7728a28e7d633581602c96b270eccb">PCA9846</a> (uint8_t i2c_address=(0xE2 &gt; &gt; 1))</td></tr>
 <tr class="separator:a5b7728a28e7d633581602c96b270eccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4ad3677d0732ad1a7de4f61f5f3b2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9846.html#acc4ad3677d0732ad1a7de4f61f5f3b2a">PCA9846</a> (TwoWire &amp;wire, uint8_t i2c_address=(0xE2 &gt; &gt; 1))</td></tr>
+<tr class="separator:acc4ad3677d0732ad1a7de4f61f5f3b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aecb05cf8c8de48023723bd625d3a52"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9846.html#a6aecb05cf8c8de48023723bd625d3a52">~PCA9846</a> ()</td></tr>
 <tr class="separator:a6aecb05cf8c8de48023723bd625d3a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35875138e9180392ed6a6cd51e727a48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_a9846.html#a35875138e9180392ed6a6cd51e727a48">begin</a> (void)</td></tr>
@@ -146,7 +148,7 @@ Static Public Attributes</h2></td></tr>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5b7728a28e7d633581602c96b270eccb" name="a5b7728a28e7d633581602c96b270eccb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b7728a28e7d633581602c96b270eccb">&#9670;&#160;</a></span>PCA9846()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7728a28e7d633581602c96b270eccb">&#9670;&#160;</a></span>PCA9846() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,6 +171,44 @@ Static Public Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00005">5</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acc4ad3677d0732ad1a7de4f61f5f3b2a" name="acc4ad3677d0732ad1a7de4f61f5f3b2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4ad3677d0732ad1a7de4f61f5f3b2a">&#9670;&#160;</a></span>PCA9846() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PCA9846::PCA9846 </td>
+          <td>(</td>
+          <td class="paramtype">TwoWire &amp;&#160;</td>
+          <td class="paramname"><em>wire</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>i2c_address</em> = <code>(0xE2&#160;&gt;&gt;&#160;1)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a <a class="el" href="class_p_c_a9846.html">PCA9846</a> instance with specified address</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wire</td><td>TwoWire instance </td></tr>
+    <tr><td class="paramname">i2c_address</td><td>I2C-bus address (default: (0xE2&gt;&gt;1)) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00009">9</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,7 +235,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00009">9</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00013">13</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +258,7 @@ Static Public Attributes</h2></td></tr>
 <p>Begin the device operation</p>
 <p>This method turns-on the device </p>
 
-<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00013">13</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00017">17</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +285,7 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00017">17</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00021">21</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +307,7 @@ Static Public Attributes</h2></td></tr>
 <p>Channel select</p>
 <dl class="section return"><dt>Returns</dt><dd>flags bitmap flags for enabling channels </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00022">22</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html#l00026">26</a> of file <a class="el" href="_m_u_x___s_w___n_x_p_8cpp_source.html">MUX_SW_NXP.cpp</a>.</p>
 
 </div>
 </div>

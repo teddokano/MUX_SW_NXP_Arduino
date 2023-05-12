@@ -6,6 +6,10 @@ PCA9846::PCA9846( uint8_t i2c_address ) : I2C_device( i2c_address )
 {
 }
 
+PCA9846::PCA9846( TwoWire& wire, uint8_t i2c_address ) : I2C_device( wire, i2c_address )
+{
+}
+
 PCA9846::~PCA9846()
 {
 }
