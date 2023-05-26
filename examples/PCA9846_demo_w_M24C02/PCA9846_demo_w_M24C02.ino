@@ -26,9 +26,12 @@ M24C02 eeprom[] = {
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n***** Hello, PCA9846! *****");
+  while (!Serial)
+    ;
 
   Wire.begin();
+
+  Serial.println("\n***** Hello, PCA9846! *****");
 
   char test_str[] = "EEPROM[*] is responding - Hello, PCA9846 Arduino shield evaluation board test program";
 
