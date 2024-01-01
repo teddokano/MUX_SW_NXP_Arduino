@@ -29,7 +29,7 @@ int M24C02::write( int byte_adr, uint8_t data )
 	return r;
 }
 
-int M24C02::write( int byte_adr, uint8_t *dp, int length )
+int M24C02::write( int byte_adr, const uint8_t *dp, int length )
 {
 #define	PAGE_WRITE_SIZE	16
 	int	w_size;

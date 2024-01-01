@@ -57,7 +57,7 @@ public:
 	 * @param data 1 byte data for writing
 	 */
 	int write( int byte_adr, uint8_t data );	
-	int write( int byte_adr, uint8_t *dp, int length );	
+	int write( int byte_adr, const uint8_t *dp, int length );	
 
 	/** Read data
 	 *
